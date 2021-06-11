@@ -5,7 +5,7 @@ export const getData = (
   setDaily_Data,
   setCity,
   setDaily_display,
-  setmoreData
+  sethourlyData
 ) => {
   axios({
     method: "GET",
@@ -13,16 +13,17 @@ export const getData = (
   })
     .then((res) => {
       if (!res.data.error) {
+        sethourlyData(false);
         setDaily_display(true);
-        console.log(res.data);
+        // console.log(res.data);
         setDaily_Data(res.data);
         // console.log(daily_data.forecast.forecastday);
         setCity(res.data.location.name);
-        setmoreData(res.data.forecast.forecastday);
-        console.log(res.data.forecast.forecastday);
-        console.log(res.data.location.name);
+        // console.log(res.data.forecast.forecastday);
+        // console.log(res.data.location.name);
       } else {
-        console.log("");
+        setDaily_Data("");
+        setCity("");
       }
     })
 

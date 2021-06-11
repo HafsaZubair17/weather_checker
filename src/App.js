@@ -2,12 +2,13 @@ import "./App.scss";
 import React, { useState } from "react";
 import Header from "./Views/Header";
 import DailyWeather from "./Views/Daily_Weather";
+import HourlyWeather from "./Views/Hourly_Weather";
 
 function App() {
   const [daily_data, setDaily_data] = useState("");
   const [city, setCity] = useState("");
   const [daily_display, setDaily_display] = useState(false);
-  const [moreData, setmoreData] = useState("");
+  const [hourlyData, sethourlyData] = useState(false);
 
   return (
     <>
@@ -15,16 +16,24 @@ function App() {
         setDaily_data={setDaily_data}
         setCity={setCity}
         setDaily_display={setDaily_display}
-        setmoreData={setmoreData}
+        sethourlyData={sethourlyData}
       />
       {daily_display ? (
         <>
           <DailyWeather
             daily_data={daily_data}
             city={city}
-            moreData={moreData}
+            sethourlyData={sethourlyData}
           />
           {/* <Card /> */}
+        </>
+      ) : (
+        <div></div>
+      )}
+
+      {hourlyData ? (
+        <>
+          <HourlyWeather daily_data={daily_data} />
         </>
       ) : (
         <div></div>

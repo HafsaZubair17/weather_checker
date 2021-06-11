@@ -4,7 +4,12 @@ import SearchBar from "material-ui-search-bar";
 import { getData } from "../Controller/Weather";
 
 // Header of Web Page
-const Header = ({ setDaily_data, setCity, setDaily_display, setmoreData }) => {
+const Header = ({
+  setDaily_data,
+  setCity,
+  setDaily_display,
+  sethourlyData,
+}) => {
   const [search, setSearch] = useState("");
 
   return (
@@ -16,7 +21,13 @@ const Header = ({ setDaily_data, setCity, setDaily_display, setmoreData }) => {
         value={search}
         onChange={(value) => setSearch(value)}
         onRequestSearch={(value) =>
-          getData(value, setDaily_data, setCity, setDaily_display, setmoreData)
+          getData(
+            value,
+            setDaily_data,
+            setCity,
+            setDaily_display,
+            sethourlyData
+          )
         }
         placeholder="Enter Location!"
       />
