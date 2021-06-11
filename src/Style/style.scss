@@ -1,7 +1,58 @@
+$maincolor: #d8e3e7;
+$altcolor: #126e82;
+
 .search {
   background-color: #d8e3e7 !important;
   width: 50vw;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+}
+
+.city {
+  color: $maincolor;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heading {
+  display: flex;
+  align-items: center !important;
+}
+
+.card {
+  height: 450px;
+  width: 300px;
+  align-items: center !important;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: black !important;
+  margin-bottom: 20px;
+}
+.data {
+  color: $maincolor !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  color: $maincolor;
+  background-color: $altcolor;
+  height: 50px !important;
+}
+
+.daily_display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 700px) {
+  .daily_display {
+    justify-content: center;
+    flex-direction: column !important;
+  }
+  .card {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
