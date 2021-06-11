@@ -7,6 +7,7 @@ function App() {
   const [daily_data, setDaily_data] = useState("");
   const [city, setCity] = useState("");
   const [daily_display, setDaily_display] = useState(false);
+  const [moreData, setmoreData] = useState("");
 
   return (
     <>
@@ -14,10 +15,15 @@ function App() {
         setDaily_data={setDaily_data}
         setCity={setCity}
         setDaily_display={setDaily_display}
+        setmoreData={setmoreData}
       />
       {daily_display ? (
         <>
-          <DailyWeather daily_data={daily_data} city={city} />
+          <DailyWeather
+            daily_data={daily_data}
+            city={city}
+            moreData={moreData}
+          />
           {/* <Card /> */}
         </>
       ) : (

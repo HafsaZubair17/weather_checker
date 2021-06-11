@@ -3,16 +3,7 @@ import React, { useState } from "react";
 import { Typography, Button } from "@material-ui/core";
 
 // Header of Web Page
-const Card = ({
-  date,
-  image,
-  temp,
-  humidity,
-  wind,
-  max_temp,
-  min_temp,
-  sethourlyData,
-}) => {
+const Card = ({ date, image, temp, humidity, wind, max_temp, min_temp }) => {
   return (
     <>
       <div className="card">
@@ -35,9 +26,6 @@ const Card = ({
         <Typography class="data" variant="h3">
           Humidity={humidity}
         </Typography>
-        <button className="button" onClick={() => sethourlyData(true)}>
-          Get Hourly Data
-        </button>
       </div>
     </>
   );

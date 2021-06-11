@@ -20,7 +20,7 @@ $altcolor: #126e82;
 }
 
 .card {
-  height: 450px;
+  height: 380px;
   width: 300px;
   align-items: center !important;
   border-style: solid;
@@ -37,6 +37,13 @@ $altcolor: #126e82;
   color: $maincolor;
   background-color: $altcolor;
   height: 50px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hourly {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .daily_display {

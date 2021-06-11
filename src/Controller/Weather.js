@@ -1,6 +1,12 @@
 import axios from "axios";
 
-export const getData = (loc, setDaily_Data, setCity, setDaily_display) => {
+export const getData = (
+  loc,
+  setDaily_Data,
+  setCity,
+  setDaily_display,
+  setmoreData
+) => {
   axios({
     method: "GET",
     url: `http://api.weatherapi.com/v1/forecast.json?key=3ee9908412104e03a2b184944211006&q=${loc}&days=10&aqi=no&alerts=no`,
@@ -12,6 +18,8 @@ export const getData = (loc, setDaily_Data, setCity, setDaily_display) => {
         setDaily_Data(res.data);
         // console.log(daily_data.forecast.forecastday);
         setCity(res.data.location.name);
+        setmoreData(res.data.forecast.forecastday);
+        console.log(res.data.forecast.forecastday);
         console.log(res.data.location.name);
       } else {
         console.log("");
